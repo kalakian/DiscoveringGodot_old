@@ -12,3 +12,4 @@ export_presets.cfg
 Thumbs.db
 
 # Project-specific ignores
+Builds/

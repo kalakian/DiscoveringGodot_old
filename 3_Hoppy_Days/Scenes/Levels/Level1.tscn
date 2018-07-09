@@ -1,87 +1,51 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://GFX/Environment/ground_grass.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/PlatformTiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/GoalBunny.tscn" type="PackedScene" id=5]
 
 [node name="Level1" type="Node2D" index="0"]
 
-[node name="Player" parent="." index="0" instance=ExtResource( 1 )]
+script = ExtResource( 1 )
 
-position = Vector2( 635, 213 )
+[node name="TileMap" type="TileMap" parent="." index="0"]
 
-[node name="Platform" type="StaticBody2D" parent="." index="1"]
-
-editor/display_folded = true
-position = Vector2( 234, 604 )
-input_pickable = false
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
 collision_layer = 1
 collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -655328, 6, 0, -589822, 6, 0, -524277, 6, 0, -524266, 6, 0, -393172, 6, 0, -196609, 3, 0, 51, 6, 0, 65553, 0, 0, 65596, 6, 0, 262147, 0, 0, 327703, 4, 0, 458779, 4, 0, 524340, 2, 0, 589824, 4, 0, 589855, 4, 0, 851973, 1, 0, 851984, 1, 0, 852004, 5, 0, 983099, 2, 0, 1114151, 5, 0, 1179727, 2, 0, 1376292, 5, 0, 1376315, 2, 0, 1572934, 2, 0, 1638433, 5, 0, 1703988, 6, 0, 1769515, 5, 0 )
 __meta__ = {
-"_edit_group_": true
+"_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Platform" index="0"]
+[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-texture = ExtResource( 2 )
+position = Vector2( 1343, 730 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platform" index="1"]
+[node name="Camera2D" parent="Player" index="2" instance=ExtResource( 4 )]
 
-visible = false
-build_mode = 0
-polygon = PoolVector2Array( -190, -30, -190, -40, -180, -50, 180, -50, 190, -40, 190, -10, 160, 40, -160, 50, -190, -10 )
+limit_left = -80
+limit_right = 5500
+limit_bottom = 2000
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Smoothing" ]
 
-[node name="Platform2" type="StaticBody2D" parent="." index="2"]
+[node name="GoalBunny" parent="." index="2" instance=ExtResource( 5 )]
 
-editor/display_folded = true
-position = Vector2( 666, 448 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Platform2" index="0"]
-
-texture = ExtResource( 2 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platform2" index="1"]
-
-visible = false
-build_mode = 0
-polygon = PoolVector2Array( -190, -30, -190, -40, -180, -50, 180, -50, 190, -40, 190, -10, 160, 40, -160, 50, -190, -10 )
-
-[node name="Platform3" type="StaticBody2D" parent="." index="3"]
-
-editor/display_folded = true
-position = Vector2( 1057, 275 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Platform3" index="0"]
-
-texture = ExtResource( 2 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platform3" index="1"]
-
-visible = false
-build_mode = 0
-polygon = PoolVector2Array( -190, -30, -190, -40, -180, -50, 180, -50, 190, -40, 190, -10, 160, 40, -160, 50, -190, -10 )
+position = Vector2( 220, -354 )
 
 
