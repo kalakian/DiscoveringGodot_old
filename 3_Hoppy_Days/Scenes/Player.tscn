@@ -40,12 +40,12 @@ height = 32.0
 
 [node name="Player" type="KinematicBody2D" index="0"]
 
-position = Vector2( 484.422, 224.201 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -58,6 +58,7 @@ frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
 position = Vector2( 0, 25 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
