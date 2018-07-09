@@ -8,10 +8,22 @@ const JUMP_SPEED = 1750
 var motion = Vector2()
 
 func _physics_process(delta):
+	update_motion(delta)
+
+
+func _process(delta):
+	update_animation()
+
+
+func update_motion(delta):
 	fall(delta)
 	run()
 	jump()
 	move_and_slide(motion, UP)
+
+
+func update_animation():
+	$AnimatedSprite.update(motion)
 
 
 func fall(delta):
@@ -28,18 +40,8 @@ func run():
 		motion.x += SPEED
 	if Input.is_action_pressed("left"):
 		motion.x -= SPEED
-	
-	if motion.x > 0:
-		$AnimatedSprite.play("run")
-		$AnimatedSprite.flip_h = false
-	elif motion.x < 0:
-		$AnimatedSprite.play("run")
-		$AnimatedSprite.flip_h = true
-	else:
-		$AnimatedSprite.play("idle")
-		$AnimatedSprite.flip_h = false
 
 
 func jump():
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
+	if is_on_floor() and Input.is_action_pressed("jump"):
 		motion.y = -JUMP_SPEED
