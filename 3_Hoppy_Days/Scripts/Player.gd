@@ -5,6 +5,8 @@ const GRAVITY = 3600
 const UP = Vector2(0, -1)
 const JUMP_SPEED = 1750
 
+export (int) var world_limit = 2000
+
 var motion = Vector2()
 
 func _physics_process(delta):
@@ -31,6 +33,13 @@ func fall(delta):
 		motion.y = 0
 	else:
 		motion.y += GRAVITY * delta
+	
+	if position.y > world_limit:
+		end_game()
+
+
+func end_game():
+	get_tree().change_scene("res://Scenes/GameOver.tscn")
 
 
 func run():
