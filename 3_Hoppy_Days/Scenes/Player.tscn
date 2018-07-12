@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Players/bunny1_stand.png" type="Texture" id=2]
 [ext_resource path="res://GFX/Players/bunny1_ready.png" type="Texture" id=3]
-[ext_resource path="res://GFX/Players/bunny1_hurt.png" type="Texture" id=4]
-[ext_resource path="res://GFX/Players/bunny1_jump.png" type="Texture" id=5]
-[ext_resource path="res://GFX/Players/bunny1_walk1.png" type="Texture" id=6]
-[ext_resource path="res://GFX/Players/bunny1_walk2.png" type="Texture" id=7]
+[ext_resource path="res://GFX/Players/bunny1_walk1.png" type="Texture" id=4]
+[ext_resource path="res://GFX/Players/bunny1_walk2.png" type="Texture" id=5]
+[ext_resource path="res://GFX/Players/bunny1_jump.png" type="Texture" id=6]
+[ext_resource path="res://GFX/Players/bunny1_hurt.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/PlayerAnimation.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=9]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
@@ -17,43 +18,44 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "hurt",
-"speed": 5.0
+"name": "run",
+"speed": 7.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "run",
-"speed": 7.0
+"name": "hurt",
+"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 
 custom_solver_bias = 0.0
 radius = 60.0
 height = 32.0
 
-[node name="Player" type="KinematicBody2D" index="0"]
+[node name="Player" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
-collision_mask = 2
+collision_mask = 6
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
+world_limit = 2000
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 animation = "idle"
 frame = 1
 script = ExtResource( 8 )
@@ -62,7 +64,14 @@ script = ExtResource( 8 )
 
 visible = false
 position = Vector2( 0, 25 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Camera2D" parent="." index="2" instance=ExtResource( 9 )]
+
+limit_left = -80
+limit_right = 5500
+limit_bottom = 2000
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Smoothing" ]
 
 
