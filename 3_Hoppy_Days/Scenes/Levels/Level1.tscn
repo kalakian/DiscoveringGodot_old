@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/SpikesTop.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/SpikeBottom.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/PlatformTiles.tres" type="TileSet" id=5]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/GoalBunny.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=8]
 
 [node name="Level1" type="Node2D" index="0"]
 
@@ -77,5 +78,7 @@ position = Vector2( 1334, 718 )
 [node name="GoalBunny" parent="." index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 220, -354 )
+
+[node name="GUI" parent="." index="4" instance=ExtResource( 8 )]
 
 
