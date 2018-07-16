@@ -7,6 +7,8 @@ const JUMP_SPEED = 1750
 
 export (int) var world_limit = 2000
 
+signal player_death
+
 var motion = Vector2()
 
 func _physics_process(delta):
@@ -35,11 +37,7 @@ func fall(delta):
 		motion.y += GRAVITY * delta
 	
 	if position.y > world_limit:
-		end_game()
-
-
-func end_game():
-	get_tree().change_scene("res://Scenes/GameOver.tscn")
+		emit_signal("player_death")
 
 
 func run():
