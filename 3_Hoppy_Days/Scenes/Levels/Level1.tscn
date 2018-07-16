@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/GoalBunny.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=9]
 
-[node name="Level1" type="Node2D" index="0"]
+[node name="Level1" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -83,7 +83,5 @@ position = Vector2( 1334, 718 )
 position = Vector2( 220, -354 )
 
 [node name="GUI" parent="." index="4" instance=ExtResource( 9 )]
-
-[connection signal="player_death" from="Player" to="." method="_on_Player_player_death"]
 
 

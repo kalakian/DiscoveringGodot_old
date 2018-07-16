@@ -7,9 +7,12 @@ const JUMP_SPEED = 1750
 
 export (int) var world_limit = 2000
 
-signal player_death
-
 var motion = Vector2()
+
+
+func _ready():
+	Global.Player = self.get_path()
+
 
 func _physics_process(delta):
 	update_motion(delta)
@@ -37,7 +40,8 @@ func fall(delta):
 		motion.y += GRAVITY * delta
 	
 	if position.y > world_limit:
-		emit_signal("player_death")
+		if Global.GameState:
+			get_node(Global.GameState).end_game()
 
 
 func run():
