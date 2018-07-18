@@ -11,7 +11,7 @@ var motion = Vector2()
 
 
 func _ready():
-	Global.Player = self.get_path()
+	Global.Player = self
 
 
 func _physics_process(delta):
@@ -41,7 +41,7 @@ func fall(delta):
 	
 	if position.y > world_limit:
 		if Global.GameState:
-			get_node(Global.GameState).end_game()
+			Global.GameState.end_game()
 
 
 func run():
@@ -56,3 +56,7 @@ func run():
 func jump():
 	if is_on_floor() and Input.is_action_pressed("jump"):
 		motion.y = -JUMP_SPEED
+
+
+func hurt():
+	motion.y = -JUMP_SPEED

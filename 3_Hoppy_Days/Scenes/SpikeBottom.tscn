@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Spikes.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Hazard.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Environment/spike_bottom.png" type="Texture" id=2]
 
 [node name="SpikeBottom" type="Area2D" index="0"]
@@ -30,6 +30,6 @@ visible = false
 build_mode = 0
 polygon = PoolVector2Array( -26, -44, 26, -44, 3, 43, -3, 43 )
 
-[connection signal="body_entered" from="." to="." method="_on_Spikes_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 
 
