@@ -2,6 +2,7 @@ extends Node2D
 
 export var starting_lives = 3
 var lives
+var coins = 0
 
 
 func _ready():
@@ -21,6 +22,10 @@ func hurt():
 	update_GUI()
 	if lives < 0:
 		end_game()
+
+
+func coin_up():
+	coins += 1
 
 
 func end_game():

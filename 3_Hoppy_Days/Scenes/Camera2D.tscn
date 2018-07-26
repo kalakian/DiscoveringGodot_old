@@ -30,4 +30,7 @@ _sections_unfolded = [ "Drag Margin", "Editor", "Smoothing" ]
 
 [node name="ParallaxBackground" parent="." index="0" instance=ExtResource( 1 )]
 
+scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Scroll" ]
+
 
