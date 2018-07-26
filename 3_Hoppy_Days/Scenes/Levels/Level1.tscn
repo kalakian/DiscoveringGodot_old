@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/GoalBunny.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=9]
 
-[node name="Level1" type="Node2D" index="0"]
+[node name="Level1" type="Node2D"]
 
 script = ExtResource( 1 )
 starting_lives = 3
