@@ -56,7 +56,9 @@ func run():
 func jump():
 	if is_on_floor() and Input.is_action_pressed("jump"):
 		motion.y = -JUMP_SPEED
+		$Sounds/Jump_SFX.play()
 
 
 func hurt():
 	motion.y = -JUMP_SPEED
+	$Sounds/Hurt_SFX.play()
