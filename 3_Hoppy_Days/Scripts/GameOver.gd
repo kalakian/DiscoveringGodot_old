@@ -11,5 +11,5 @@ func _on_TextureButton_pressed():
 
 
 func try_again():
-	get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
+	get_tree().change_scene(Global.Level1)
 

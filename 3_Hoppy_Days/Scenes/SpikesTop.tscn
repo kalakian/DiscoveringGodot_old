@@ -3,7 +3,6 @@
 [ext_resource path="res://Scripts/Hazard.gd" type="Script" id=1]
 [ext_resource path="res://GFX/Environment/spikes_top.png" type="Texture" id=2]
 
-
 [node name="SpikesTop" type="Area2D" index="0"]
 
 modulate = Color( 0.367188, 0.0344238, 0.0344238, 1 )
