@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/GameState.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/SpikesTop.tscn" type="PackedScene" id=2]
@@ -13,8 +13,9 @@
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=11]
 [ext_resource path="res://SFX/Chiptune_Adventures_1.ogg" type="AudioStream" id=12]
 [ext_resource path="res://Scenes/Spikeman.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Cloud.tscn" type="PackedScene" id=14]
 
-[node name="Level1" type="Node2D"]
+[node name="Level1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 starting_lives = 3
@@ -57,6 +58,8 @@ position = Vector2( 3807, 916 )
 position = Vector2( 4007, 918 )
 
 [node name="Coins" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="Coin" parent="Coins" index="0" instance=ExtResource( 6 )]
 
@@ -300,5 +303,9 @@ bus = "Master"
 [node name="Spikeman" parent="NPCs" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 511.724, 752.988 )
+
+[node name="Cloud" parent="NPCs" index="1" instance=ExtResource( 14 )]
+
+position = Vector2( 1080.32, 347.986 )
 
 
