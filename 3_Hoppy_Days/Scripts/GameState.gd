@@ -43,3 +43,11 @@ func life_up():
 
 func end_game():
 	get_tree().change_scene(Global.GameOver)
+
+
+func victory():
+	get_tree().change_scene(Global.Victory)
+
+
+func _on_Portal_body_entered(body):
+	victory()
