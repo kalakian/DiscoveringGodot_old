@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=1]
+
+[node name="Walls" type="Node2D" index="0"]
+
+[node name="Orange" type="Sprite" parent="." index="0"]
+
+position = Vector2( 290, 190 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 256, 576, 384 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Wood" type="Sprite" parent="." index="1"]
+
+position = Vector2( 880, 190 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 576, 256, 576, 384 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Concrete" type="Sprite" parent="." index="2"]
+
+position = Vector2( 290, 590 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 576, 640, 576, 384 )
+_sections_unfolded = [ "Region" ]
+
+[node name="ThickConcrete" type="Sprite" parent="." index="3"]
+
+position = Vector2( 880, 590 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 640, 576, 384 )
+_sections_unfolded = [ "Region" ]
+
+
