@@ -7,8 +7,8 @@
 enabled = true
 editor_only = false
 texture = ExtResource( 1 )
-offset = Vector2( 320, 0 )
-texture_scale = 1.0
+offset = Vector2( 170, 0 )
+texture_scale = 0.5
 color = Color( 1, 1, 1, 1 )
 energy = 1.0
 mode = 0
@@ -25,6 +25,6 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
-_sections_unfolded = [ "Shadow" ]
+_sections_unfolded = [ "Shadow", "Transform" ]
 
 
