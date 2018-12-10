@@ -24,11 +24,3 @@ func update_velocity():
 	else:
 		velocity = velocity.normalized() * lerp(velocity.length(), 0, FRICTION)
 
-
-func _input(event):
-	if Input.is_action_just_pressed("use"):
-		toggle_torch()
-
-
-func toggle_torch():
-	$Torch.enabled = not $Torch.enabled
