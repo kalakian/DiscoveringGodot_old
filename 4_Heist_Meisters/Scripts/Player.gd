@@ -2,6 +2,10 @@ extends "res://Scripts/Character.gd"
 
 var velocity = Vector2()
 
+func _ready():
+	Global.Player = self
+
+
 func _process(delta):
 	update_facing()
 	update_velocity()

@@ -14,6 +14,10 @@ config/name="Heist Meisters"
 run/main_scene="res://Scenes/Levels/Level1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Scripts/Global.gd"
+
 [display]
 
 window/size/width=1600
@@ -55,6 +59,7 @@ use=[ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_nam
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Walls"
 2d_physics/layer_3="SecurityCameras"
+2d_physics/layer_4="Guards"
 
 [rendering]
 
