@@ -5,7 +5,11 @@ const MAX_DETECTION_RANGE = 320
 const RED = Color(1, .25, .25)
 const WHITE = Color(1, 1, 1)
 
-onready var Player = get_node("/root/Level1/Player") # make this level neutral
+onready var Player = Global.Player
+
+func _ready():
+	add_to_group("NPC")
+
 
 func _process(delta):
 	if Player_is_in_FOV_TOLERANCE() and PLayer_is_in_LOS():
@@ -33,3 +37,11 @@ func PLayer_is_in_LOS():
 	if LOS_obstacle.collider == Player and Player_in_range:
 		return true
 	return false
+
+
+func NightVision_mode():
+	$Torch.enabled = false
+
+
+func DarkVision_mode():
+	$Torch.enabled = true

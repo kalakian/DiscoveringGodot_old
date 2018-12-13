@@ -254,13 +254,14 @@ __meta__ = {
 
 [node name="VisionMode" type="CanvasModulate" parent="." index="7"]
 
-color = Color( 0.152494, 0.472656, 0.142166, 1 )
+visible = false
+color = Color( 0.0392157, 0.0431373, 0.223529, 1 )
 script = ExtResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VisionMode" index="0"]
 
 stream = null
-volume_db = 0.0
+volume_db = -20.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
