@@ -1,6 +1,8 @@
 extends "res://Scripts/Character.gd"
 
 var velocity = Vector2()
+enum VISION_MODES {DARK, NIGHTVISION}
+var vision_mode = VISION_MODES.DARK
 
 func _ready():
 	Global.Player = self
@@ -27,4 +29,19 @@ func update_velocity():
 		velocity = velocity.clamped(MAX_SPEED)
 	else:
 		velocity = velocity.normalized() * lerp(velocity.length(), 0, FRICTION)
+
+
+func _input(event):
+	if Input.is_action_just_pressed("vision_mode_change") and $VisionModeTimer.is_stopped():
+		cycle_vision_mode()
+		$VisionModeTimer.start()
+
+
+func cycle_vision_mode():
+	if vision_mode == VISION_MODES.DARK:
+		vision_mode = VISION_MODES.NIGHTVISION
+		get_tree().call_group("interface", "NightVision_mode")
+	elif vision_mode == VISION_MODES.NIGHTVISION:
+		vision_mode = VISION_MODES.DARK
+		get_tree().call_group("interface", "DarkVision_mode")
 
