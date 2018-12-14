@@ -84,8 +84,8 @@ _sections_unfolded = [ "Font", "Settings" ]
 default_font = SubResource( 1 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = SubResource( 2 )
 Button/styles/disabled = null
@@ -106,5 +106,5 @@ RichTextLabel/fonts/mono_font = null
 RichTextLabel/fonts/normal_font = null
 RichTextLabel/styles/focus = null
 RichTextLabel/styles/normal = null
-_sections_unfolded = [ "Button", "Button/styles", "RichTextLabel/colors" ]
+_sections_unfolded = [ "Button", "Button/colors", "RichTextLabel/colors" ]
 
