@@ -25,4 +25,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 visible = false
 
+[connection signal="combination_correct" from="CanvasLayer/NumberPad" to="." method="_on_NumberPad_combination_correct"]
+
 

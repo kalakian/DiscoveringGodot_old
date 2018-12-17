@@ -193,7 +193,7 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = ""
+text = "Test"
 scroll_active = true
 scroll_following = false
 selection_enabled = false
@@ -598,6 +598,15 @@ process_mode = 1
 wait_time = 1.5
 one_shot = true
 autostart = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="about_to_show" from="." to="." method="_on_NumberPad_about_to_show"]
 
