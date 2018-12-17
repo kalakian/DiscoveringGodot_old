@@ -37,7 +37,6 @@ func move():
 
 
 func make_path():
-	randomize()
 	var next_destination = possible_destinations[randi() % possible_destinations.size()]
 	
 	path = navigation.get_simple_path(global_position, next_destination.global_position)

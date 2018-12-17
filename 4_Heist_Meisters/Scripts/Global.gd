@@ -11,3 +11,6 @@ var nightvision_off_sfx = "res://SFX/nightvision_off.wav"
 
 const RED_LIGHT = "res://GFX/Interface/PNG/dotRed.png"
 const GREEN_LIGHT = "res://GFX/Interface/PNG/dotGreen.png"
+
+func _ready():
+	randomize()
