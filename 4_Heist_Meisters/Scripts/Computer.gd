@@ -3,13 +3,16 @@ extends Area2D
 var can_click = false
 var combination
 export var combination_length = 4
+export var lock_group = "Unset"
 
 signal set_combination
 
 func _ready():
 	$Light2D.enabled = false
+	$Label.text = lock_group
+	$Label.rect_rotation = -rotation_degrees
 	generate_combination()
-	emit_signal("set_combination", combination)
+	emit_signal("set_combination", combination, lock_group)
 
 
 func generate_combination():
@@ -36,3 +39,4 @@ func _input_event(viewport, event, shape_idx):
 
 func set_popup_text():
 	$CanvasLayer/ComputerPopup.set_text(combination)
+

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scenes/Theme.tres" type="Theme" id=1]
+[ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/NumberPad.gd" type="Script" id=2]
 [ext_resource path="res://GFX/Interface/PNG/metalPanel.png" type="Texture" id=3]
 [ext_resource path="res://GFX/Interface/PNG/glassPanel.png" type="Texture" id=4]
@@ -8,6 +8,7 @@
 [ext_resource path="res://GFX/Interface/PNG/metalPanel_greenCorner.png" type="Texture" id=6]
 [ext_resource path="res://GFX/Interface/PNG/metalPanel_redCorner.png" type="Texture" id=7]
 [ext_resource path="res://GFX/Interface/PNG/metalPanel_blueCorner.png" type="Texture" id=8]
+
 
 [sub_resource type="StyleBoxTexture" id=1]
 

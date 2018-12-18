@@ -215,6 +215,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Doors" type="Node2D" parent="." index="6"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_lock_": true
@@ -253,6 +254,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="LockedDoors" type="Node2D" parent="." index="7"]
 
+editor/display_folded = true
 __meta__ = {
 "_edit_lock_": true
 }
@@ -334,21 +336,24 @@ __meta__ = {
 
 [node name="Computer1" parent="Computers" index="0" instance=ExtResource( 12 )]
 
-position = Vector2( 607.645, 34.0772 )
+position = Vector2( 608, 32 )
 rotation = -1.5708
 _sections_unfolded = [ "Collision", "Transform" ]
+lock_group = "Aqua"
 
 [node name="Computer2" parent="Computers" index="1" instance=ExtResource( 12 )]
 
 position = Vector2( 992.766, 30.5681 )
 rotation = -1.5708
 _sections_unfolded = [ "Collision", "Transform" ]
+lock_group = "Office"
 
 [node name="Computer3" parent="Computers" index="2" instance=ExtResource( 12 )]
 
 position = Vector2( 1375.7, 33.9196 )
 rotation = -1.5708
 _sections_unfolded = [ "Collision", "Transform" ]
+lock_group = "Training"
 
 [node name="VisionMode" type="CanvasModulate" parent="." index="11"]
 
@@ -373,8 +378,8 @@ bus = "Master"
 
 [connection signal="set_combination" from="Computers/Computer2" to="LockedDoors/LockedDoor2" method="_on_Computer_set_combination"]
 
-[connection signal="set_combination" from="Computers/Computer3" to="LockedDoors/LockedDoor4" method="_on_Computer_set_combination"]
-
 [connection signal="set_combination" from="Computers/Computer3" to="LockedDoors/LockedDoor3" method="_on_Computer_set_combination"]
+
+[connection signal="set_combination" from="Computers/Computer3" to="LockedDoors/LockedDoor4" method="_on_Computer_set_combination"]
 
 
