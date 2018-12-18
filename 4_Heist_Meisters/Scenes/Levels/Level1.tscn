@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/CombinationGenerator.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Navigation2D.gd" type="Script" id=2]
@@ -11,7 +11,8 @@
 [ext_resource path="res://Scenes/LockedDoor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Tilesets/AutoTileWalls.tres" type="TileSet" id=10]
 [ext_resource path="res://Tilesets/Furniture.tres" type="TileSet" id=11]
-[ext_resource path="res://Scripts/VisionMode.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Computer.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scripts/VisionMode.gd" type="Script" id=13]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -19,7 +20,7 @@ vertices = PoolVector2Array( 1424, 464, 1424, 368, 1456, 272, 1456, 848, 752, 46
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 6, 5, 8, 9 ), PoolIntArray( 10, 2, 1, 11 ), PoolIntArray( 12, 4, 7, 13 ), PoolIntArray( 14, 15, 16, 17 ), PoolIntArray( 14, 17, 18, 19, 20, 21 ), PoolIntArray( 20, 22, 23, 21 ), PoolIntArray( 14, 21, 24, 25 ), PoolIntArray( 25, 24, 26, 27 ), PoolIntArray( 28, 27, 26, 29 ), PoolIntArray( 28, 29, 30, 31 ), PoolIntArray( 32, 33, 34, 35 ), PoolIntArray( 35, 36, 37 ), PoolIntArray( 32, 35, 37 ), PoolIntArray( 30, 32, 37, 38 ), PoolIntArray( 39, 40, 41, 42 ), PoolIntArray( 39, 42, 43, 44 ), PoolIntArray( 45, 39, 44, 46 ), PoolIntArray( 47, 48, 49, 50 ), PoolIntArray( 49, 51, 52, 50 ), PoolIntArray( 47, 50, 10, 53 ), PoolIntArray( 53, 10, 11 ), PoolIntArray( 46, 53, 11 ), PoolIntArray( 45, 46, 11 ), PoolIntArray( 38, 45, 11, 54 ), PoolIntArray( 55, 56, 57, 58 ), PoolIntArray( 59, 60, 0, 61 ), PoolIntArray( 3, 62, 61 ), PoolIntArray( 0, 3, 61 ), PoolIntArray( 59, 61, 58, 57 ), PoolIntArray( 63, 64, 65, 66, 67 ), PoolIntArray( 67, 68, 69, 70 ), PoolIntArray( 69, 71, 70 ), PoolIntArray( 67, 70, 72 ), PoolIntArray( 63, 67, 72 ), PoolIntArray( 3, 63, 72, 73 ), PoolIntArray( 62, 3, 73 ), PoolIntArray( 74, 62, 73 ), PoolIntArray( 74, 73, 54, 58 ), PoolIntArray( 55, 58, 54 ), PoolIntArray( 11, 55, 54 ), PoolIntArray( 38, 54, 75 ), PoolIntArray( 76, 77, 78, 79 ), PoolIntArray( 79, 80, 81, 82 ), PoolIntArray( 76, 79, 82, 83 ), PoolIntArray( 82, 84, 85, 83 ), PoolIntArray( 8, 76, 83, 86 ), PoolIntArray( 9, 8, 86 ), PoolIntArray( 9, 86, 87 ), PoolIntArray( 9, 87, 88, 13 ), PoolIntArray( 13, 88, 89 ), PoolIntArray( 12, 13, 89 ), PoolIntArray( 75, 12, 89, 90 ), PoolIntArray( 38, 75, 90 ), PoolIntArray( 30, 38, 90, 91, 31 ) ]
 outlines = [ PoolVector2Array( 368, 784, 368, 816, 304, 816, 304, 880, 144, 880, 144, 816, 80, 816, 80, 784, 208, 784, 208, 592, 288, 592, 288, 272, 592, 272, 592, 160, 464, 160, 464, 80, 688, 80, 688, 160, 624, 160, 624, 272, 976, 272, 976, 128, 848, 128, 848, 96, 1136, 96, 1136, 176, 1008, 176, 1008, 272, 1360, 272, 1360, 176, 1232, 176, 1232, 80, 1520, 80, 1520, 128, 1392, 128, 1392, 272, 1456, 272, 1456, 848, 1616, 848, 1616, 704, 1776, 704, 1776, 928, 1712, 928, 1712, 1072, 1552, 1072, 1552, 976, 1616, 976, 1616, 880, 912, 880, 912, 368, 688, 368, 688, 464, 752, 464, 752, 880, 624, 880, 624, 976, 752, 976, 752, 1008, 624, 1008, 624, 1184, 528, 1184, 528, 1008, 464, 1008, 464, 976, 592, 976, 592, 880, 464, 880, 464, 464, 656, 464, 656, 368, 512, 368, 512, 304, 368, 304, 368, 624, 240, 624, 240, 784 ), PoolVector2Array( 496, 560, 720, 560, 720, 800, 496, 800 ), PoolVector2Array( 944, 688, 1424, 688, 1424, 848, 944, 848 ), PoolVector2Array( 944, 368, 944, 464, 1072, 464, 1072, 592, 1296, 592, 1296, 464, 1424, 464, 1424, 368 ) ]
 
-[node name="Level1" type="Node2D" index="0"]
+[node name="Level1" type="Node2D"]
 
 [node name="CombinationGenerator" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -263,6 +264,11 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="LockedDoors" type="Node2D" parent="." index="7"]
 
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="LockedDoor1" parent="LockedDoors" index="0" instance=ExtResource( 9 )]
 
 position = Vector2( 224, 736 )
@@ -316,18 +322,31 @@ collision_layer = 2
 collision_mask = 13
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -65527, 1610612736, 0, -65521, 1610612736, 0, -65515, 1610612736, 0, 8, 2, 0, 14, 2, 0, 20, 2, 0, 131083, 7, 0, 131086, -1610612729, 0, 131094, 1610612743, 0, 262146, 1610612742, 0, 393219, 1610612737, 0, 458755, 5, 0, 458770, 1610612736, 0, 458775, 1610612743, 0, 524291, 1, 0, 524305, 2, 0, 589832, -1610612736, 0, 589834, -1073741824, 0, 655362, -1610612729, 0, 655364, 7, 0, 655368, -1610612736, 0, 655370, -1073741824, 0, 655385, -1073741817, 0, 720904, -1610612736, 0, 720905, -1073741822, 0, 720906, -1073741824, 0, 720911, 3, 0, 720913, 3, 0, 720915, 3, 0, 720917, 3, 0, 720924, -1610612732, 0, 786447, 0, 0, 786449, 0, 0, 786451, 0, 0, 786453, 0, 0, 786461, -1073741823, 0, 851969, -1610612730, 0, 851981, 1610612743, 0, 917507, -1073741817, 0, 917509, -1073741818, 0, 983067, 3, 0, 1048583, -1610612728, 0, 1048603, 0, 0, 1048605, -1073741817, 0, 1179655, 1610612743, 0, 1179658, -1073741815, 0 )
+tile_data = PoolIntArray( -65527, 1610612736, 0, -65521, 1610612736, 0, -65515, 1610612736, 0, 8, 2, 0, 14, 2, 0, 20, 2, 0, 131083, 7, 0, 131086, -1610612729, 0, 131094, 1610612743, 0, 262146, 1610612742, 0, 393219, 1610612737, 0, 458754, -1610612736, 0, 458755, 5, 0, 458770, 1610612736, 0, 458775, 1610612743, 0, 524291, 1, 0, 524305, 2, 0, 589832, -1610612736, 0, 589834, -1073741824, 0, 655362, -1610612729, 0, 655364, 7, 0, 655368, -1610612736, 0, 655370, -1073741824, 0, 655385, -1073741817, 0, 720904, -1610612736, 0, 720905, -1073741822, 0, 720906, -1073741824, 0, 720911, 3, 0, 720913, 3, 0, 720915, 3, 0, 720917, 3, 0, 720924, -1610612732, 0, 786447, 0, 0, 786449, 0, 0, 786451, 0, 0, 786453, 0, 0, 786461, -1073741823, 0, 851969, -1610612730, 0, 851981, 1610612743, 0, 917507, -1073741817, 0, 917509, -1073741818, 0, 983067, 3, 0, 1048583, -1610612728, 0, 1048603, 0, 0, 1048605, -1073741817, 0, 1179655, 1610612743, 0, 1179658, -1073741815, 0 )
 _sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="VisionMode" type="CanvasModulate" parent="." index="10"]
+[node name="Computers" type="Node2D" parent="." index="10"]
+
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Computer" parent="Computers" index="0" instance=ExtResource( 12 )]
+
+position = Vector2( 224, 480 )
+rotation = 3.14159
+_sections_unfolded = [ "Transform" ]
+combination_length = 4
+
+[node name="VisionMode" type="CanvasModulate" parent="." index="11"]
 
 editor/display_folded = true
 visible = false
 color = Color( 0.0392157, 0.0431373, 0.223529, 1 )
-script = ExtResource( 12 )
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_lock_": true
 }
