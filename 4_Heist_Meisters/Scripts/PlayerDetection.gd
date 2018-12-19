@@ -14,6 +14,7 @@ func _ready():
 func _process(delta):
 	if Player_is_in_FOV_TOLERANCE() and PLayer_is_in_LOS():
 		$Torch.color = RED
+		get_tree().call_group("SuspicionMeter", "player_seen")
 	else:
 		$Torch.color = WHITE
 
