@@ -16,6 +16,7 @@ const BOX_LAYER = 16
 func _ready():
 	Global.Player = self
 	$DisguiseTimer.wait_time = disguise_duration
+	get_tree().call_group("DisguiseDisplay", "update_disguises", disguises)
 	reveal()
 
 
@@ -96,4 +97,5 @@ func disguise():
 	$DisguiseTimer.start()
 	
 	disguises -= 1
+	get_tree().call_group("DisguiseDisplay", "update_disguises", disguises)
 	disguised = true

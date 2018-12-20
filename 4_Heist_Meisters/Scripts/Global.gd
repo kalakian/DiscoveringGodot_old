@@ -21,5 +21,7 @@ const BOX_OCCLUDER = "res://Scenes/Characters/BoxOccluder.tres"
 const PLAYER_COLLIDER = "res://Scenes/Characters/CharacterCollider.tres"
 const BOX_COLLIDER = "res://Scenes/Characters/BoxCollider.tres"
 
+const BOX_ICON = "res://GFX/PNG/Tiles/tile_156.png"
+
 func _ready():
 	randomize()

@@ -135,9 +135,6 @@ editor/display_folded = true
 position = Vector2( -32, 544 )
 rotation = -1.5708
 _sections_unfolded = [ "Collision", "Transform" ]
-disguises = 3
-disguise_duration = 5
-disguise_slowdown = 0.25
 
 [node name="Camera2D" type="Camera2D" parent="Player" index="2"]
 
