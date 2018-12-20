@@ -99,3 +99,9 @@ func disguise():
 	disguises -= 1
 	get_tree().call_group("DisguiseDisplay", "update_disguises", disguises)
 	disguised = true
+
+
+func collect_briefcase():
+	var loot = Node.new()
+	loot.name = "briefcase"
+	add_child(loot)
