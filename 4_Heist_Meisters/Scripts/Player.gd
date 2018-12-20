@@ -1,21 +1,29 @@
 extends "res://Scripts/Character.gd"
 
+export var disguises = 3 # how many disguises you start with
+export var disguise_duration = 5 # how long a disguise can last
+export var disguise_slowdown = 0.25
+
 var velocity = Vector2()
 enum VISION_MODES {DARK, NIGHTVISION}
 var vision_mode = VISION_MODES.DARK
 var disguised = false
+var velocity_multipler = 1
 
 const PLAYER_LAYER = 1
 const BOX_LAYER = 16
 
 func _ready():
 	Global.Player = self
+	$DisguiseTimer.wait_time = disguise_duration
+	reveal()
 
 
 func _process(delta):
 	update_facing()
 	update_velocity()
-	move_and_slide(velocity)
+	move_and_slide(velocity * velocity_multipler)
+	update_label()
 
 
 func update_facing():
@@ -33,6 +41,12 @@ func update_velocity():
 		velocity = velocity.clamped(MAX_SPEED)
 	else:
 		velocity = velocity.normalized() * lerp(velocity.length(), 0, FRICTION)
+
+
+func update_label():
+	if disguised:
+		$Label.rect_rotation = -rotation_degrees
+		$Label.text = str($DisguiseTimer.time_left).pad_decimals(2)
 
 
 func _input(event):
@@ -55,23 +69,31 @@ func cycle_vision_mode():
 func toggle_disguise():
 	if disguised:
 		reveal()
-	else:
+	elif disguises > 0:
 		disguise()
 
 
 func reveal():
+	$Label.visible = false
 	$Sprite.texture = load(Global.PLAYER_SPRITE)
 	$Light2D.texture = load(Global.PLAYER_SPRITE)
 	$LightOccluder2D.occluder = load(Global.PLAYER_OCCLUDER)
 	$CollisionShape2D.shape = load(Global.PLAYER_COLLIDER)
 	collision_layer = PLAYER_LAYER
+	velocity_multipler = 1
+	
 	disguised = false
 
 
 func disguise():
+	$Label.visible = true
 	$Sprite.texture = load(Global.BOX_SPRITE)
 	$Light2D.texture = load(Global.BOX_SPRITE)
 	$LightOccluder2D.occluder = load(Global.BOX_OCCLUDER)
 	$CollisionShape2D.shape = load(Global.BOX_COLLIDER)
 	collision_layer = BOX_LAYER
+	velocity_multipler = disguise_slowdown
+	$DisguiseTimer.start()
+	
+	disguises -= 1
 	disguised = true
