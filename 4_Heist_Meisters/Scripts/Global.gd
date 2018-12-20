@@ -23,5 +23,7 @@ const BOX_COLLIDER = "res://Scenes/Characters/BoxCollider.tres"
 
 const BOX_ICON = "res://GFX/PNG/Tiles/tile_156.png"
 
+const BRIEFCASE_ICON = "res://GFX/Loot/suitcase.png"
+
 func _ready():
 	randomize()

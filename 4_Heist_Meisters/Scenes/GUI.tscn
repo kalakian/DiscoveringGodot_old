@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Theme.tres" type="Theme" id=1]
 [ext_resource path="res://GFX/Interface/PNG/glassPanel_cornerBR.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://GFX/Interface/PNG/dot_shadow.png" type="Texture" id=5]
 [ext_resource path="res://GFX/Interface/PNG/dotRed.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/SuspicionMeter.gd" type="Script" id=7]
+[ext_resource path="res://GFX/Interface/PNG/glassPanel_cornerTR.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/LootContainer.gd" type="Script" id=9]
 
 [node name="GUI" type="CanvasLayer" index="0"]
 
@@ -55,12 +57,13 @@ _sections_unfolded = [ "Mouse" ]
 
 [node name="DisguiseContainer" type="NinePatchRect" parent="MarginContainer/Control" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 183.0
-margin_bottom = 79.0
+margin_right = 300.0
+margin_bottom = 90.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -97,7 +100,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 173.0
+margin_right = 290.0
 margin_bottom = 23.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -120,8 +123,8 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 27.0
-margin_right = 173.0
-margin_bottom = 69.0
+margin_right = 290.0
+margin_bottom = 80.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 focus_mode = 2
@@ -148,7 +151,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -250.0
-margin_top = -90.0
+margin_top = -120.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -183,9 +186,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 55.0
-margin_top = 33.0
+margin_top = 48.0
 margin_right = 195.0
-margin_bottom = 57.0
+margin_bottom = 72.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -249,5 +252,79 @@ nine_patch_stretch = false
 script = ExtResource( 7 )
 suspicion_step = 1
 suspicion_dropoff = 0.25
+
+[node name="LootContainer" type="NinePatchRect" parent="MarginContainer/Control" index="2" groups=[
+"LootContainer",
+]]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_top = -120.0
+margin_right = 300.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 8 )
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+script = ExtResource( 9 )
+_sections_unfolded = [ "Margin", "Patch Margin", "Rect" ]
+
+[node name="Label" type="Label" parent="MarginContainer/Control/LootContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = 23.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Loot"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin" ]
+
+[node name="LootList" type="ItemList" parent="MarginContainer/Control/LootContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 39.0
+margin_right = 328.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+items = [  ]
+select_mode = 0
+allow_reselect = false
+max_columns = 5
+same_column_width = true
+icon_mode = 1
+icon_scale = 0.5
+fixed_icon_size = Vector2( 0, 0 )
+_sections_unfolded = [ "Columns", "Icon" ]
 
 
