@@ -4,6 +4,8 @@ var Player
 var Navigation
 var Destinations
 
+# File links
+var tutorial_messages = "res://Scenes/Levels/TutorialMessages.json"
 
 # Asset links
 var nightvision_on_sfx = "res://SFX/nightvision.wav"

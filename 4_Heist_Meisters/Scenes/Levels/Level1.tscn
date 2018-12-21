@@ -378,8 +378,8 @@ position = Vector2( 115.346, 602.943 )
 
 [connection signal="set_combination" from="Computers/Computer2" to="LockedDoors/LockedDoor2" method="_on_Computer_set_combination"]
 
-[connection signal="set_combination" from="Computers/Computer3" to="LockedDoors/LockedDoor4" method="_on_Computer_set_combination"]
-
 [connection signal="set_combination" from="Computers/Computer3" to="LockedDoors/LockedDoor3" method="_on_Computer_set_combination"]
+
+[connection signal="set_combination" from="Computers/Computer3" to="LockedDoors/LockedDoor4" method="_on_Computer_set_combination"]
 
 

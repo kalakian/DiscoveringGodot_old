@@ -6,7 +6,7 @@
 
 editor/display_folded = true
 visible = false
-color = Color( 0.0392157, 0.0431373, 0.223529, 1 )
+color = Color( 0.0117647, 0.0313726, 0.109804, 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
