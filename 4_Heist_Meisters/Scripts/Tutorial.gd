@@ -26,6 +26,7 @@ func update_pointer_position(number):
 	$Tween.start()
 	$AudioStreamPlayer.play()
 	$TutorialGUI/Popup/Label.text = messages[str(number)]
+	$TutorialGUI/AnimationPlayer.play("MessageTransition")
 	$TutorialGUI/Popup.show()
 
 
